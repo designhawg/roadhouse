@@ -1,0 +1,104 @@
+body {
+  background-color: #dadada;
+}
+
+nav {
+  background-color: #333;
+  height: 60px;
+  width: 100%;
+}
+
+.grid-contain {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-rows: 100px;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.sidebar {
+  grid-column: 1/1;
+  grid-row: 1/-1;
+  min-height: 100vh;
+  background-color: #efefef;
+}
+
+.dash {
+  grid-column: 2/2;
+  grid-row: 1/-1;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.mod1, .mod2 {
+  background-color: #fff;
+  height: 200px;
+  margin: 15px auto 0 auto;
+  width: 90%;
+}
+
+.mod2 {
+  background-color: #eee;
+  height: 300px;
+  margin: 15px auto 0 auto;
+  width: 96%;
+}
+
+.pulse {
+  padding: 80px 0px 0px 90px;
+}
+
+.mod2 > .pulse {
+  padding: 140px 0px 0px 330px;
+}
+
+.pulse > div {
+  background-color: #bababa;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: absolute;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: pulse 1s 0s linear infinite;
+  animation: pulse 1s 0s linear infinite;
+}
+.pulse > div:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.pulse > div:nth-child(3) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
